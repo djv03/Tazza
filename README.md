@@ -1,3 +1,16 @@
+Welcome to Tazza: Your go to app for getting all latest news
+ you can get: 1.all trending news
+              2. filter feed acoording to 7 available category like sports, business, technology etc.
+              3. SPA(Single Page Application) with infinite scroll
+              
+Hope you like it!!!
+Happy coding!!!
+
+Here are the steps to start your app in your machine
+1. download Zip folder from green "code" button
+2. exctract file in a folder then
+
+3.run following commands in terminal 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
