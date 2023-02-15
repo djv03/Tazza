@@ -4,6 +4,7 @@ import './index.css';
 
 import Navbar from './components/Navbar';
 import NewsGrid from './components/NewsGrid';
+import NotFound from './components/NotFound';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -22,7 +23,7 @@ function App() {
           <Route path='/science' element={<NewsGrid key="science" category="science" />}></Route>
           <Route path='/sports' element={<NewsGrid key="sports" category="sports" />}></Route>
           <Route path='/technology' element={<NewsGrid key="technology" category="technology" />}></Route>
-          <Route path='*' >nothing found</Route>
+          <Route path='*' element={<NotFound/>} ></Route>
 
         </Routes>
     </BrowserRouter>
