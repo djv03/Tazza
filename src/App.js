@@ -22,6 +22,8 @@ function App() {
           <Route path='/science' element={<NewsGrid key="science" category="science" />}></Route>
           <Route path='/sports' element={<NewsGrid key="sports" category="sports" />}></Route>
           <Route path='/technology' element={<NewsGrid key="technology" category="technology" />}></Route>
+          <Route path='*' >nothing found</Route>
+
         </Routes>
     </BrowserRouter>
   );
