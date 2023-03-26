@@ -1,17 +1,4 @@
-.card{
-  width: 22rem;
-  transition:   0.2s;
-}
 
-.card:hover{
-  margin: 3px;
-}
-.nav-item{
-  font-weight: bolder;
-  font-size: 1.1rem;
-  margin-left: 11px;
-
-}
 .darkmode{
   background-color: black;
 }

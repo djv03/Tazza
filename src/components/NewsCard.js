@@ -14,7 +14,7 @@ function NewsCard(props) {
                 className="card-img-top" alt="img" />
                 <div className="card-body">
                     <h5 className="card-title" id='title'>{props.title}</h5>
-                    <p className="card-text">{props.desc}</p>
+                    <p className="card-text">{props.desc}...</p>
                     <p className='card-text'><small className='text-muted'>By <b> {!props.author?"anonymous":props.author}</b></small></p>
                     <p className='card-text'><small className='text-muted'>on  {new Date(props.date).toUTCString()}</small></p>
                     <a href={props.link} target="_blank" rel='noreferrer' className="btn btn-primary">Read full article at {props.source}</a>  

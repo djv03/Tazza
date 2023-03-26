@@ -1,0 +1,76 @@
+.card {
+  width: 22rem;
+  transition: 0.2s;
+}
+
+.card:hover {
+  margin: 3px;
+}
+
+.navbar {
+  background-color: rgb(200, 200, 200);
+  justify-content: space-between;
+  /* border: 2px solid red; */
+}
+
+
+@media (max-width: 1000px) {
+  
+  #link-container>ul{
+    /* background-color: cyan; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+  }
+  #link-container>ul>li{
+    margin: 13px;
+  }
+ 
+  #darkmodebtn{
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+  
+.category {
+ 
+  margin-left: 0px;
+}
+}
+
+.category {
+  list-style: none;
+  text-decoration: none;
+}
+.nav-item{
+  margin: 13px;
+}
+#link-container>ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#link-container>ul>li{
+  text-decoration: none;
+  list-style: none;
+}
+
+#logo {
+  color: rgb(0, 0, 195);
+  font-weight: bolder;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 13px;
+}
+#darkmodebtn{
+  position: absolute;
+  right: 0;
+  margin: 13px;
+}
+.nav-item {
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
