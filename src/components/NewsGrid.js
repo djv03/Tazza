@@ -106,7 +106,7 @@ export class NewsGrid extends Component {
                             loader={<Loading/>}
                         > */}
                         <div className='row'>
-                            {this.state.articles? <Notfound/>:  this.state.articles.map((element) => {
+                            {!this.state.articles? <Notfound/>:  this.state.articles.map((element) => {
                                 return <div className="col-md-4 mt-4" key={element.url}>
 
                                     <NewsCard title={element.title ? element.title : ""}
