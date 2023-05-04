@@ -119,8 +119,9 @@ export class NewsGrid extends Component {
                                 </div>
                             })}
                             <div className='container'>
-
+                            {this.state.articles &&
                                 <button type="button" className="btn btn-primary w-100 mx-auto mt-3 mb-3" onClick={this.LoadMoreNews}>Load More</button>
+                            }
                             </div>
                         </div>
 
