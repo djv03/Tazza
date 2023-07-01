@@ -8,7 +8,7 @@ function NewsCard(props) {
     
     return (
         <div>
-            <div className="card" >
+            <div className="card " >
                 <img 
                 src={!props.image_url ? "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg" : props.image_url} 
                 className="card-img-top" alt="img" />
@@ -17,7 +17,7 @@ function NewsCard(props) {
                     <p className="card-text">{props.desc}...</p>
                     <p className='card-text'><small className='text-muted'>By <b> {!props.author?"anonymous":props.author}</b></small></p>
                     <p className='card-text'><small className='text-muted'>on  {new Date(props.date).toUTCString()}</small></p>
-                    <a href={props.link} target="_blank" rel='noreferrer' className="btn btn-primary">Read full article at {props.source}</a>  
+                    <a href={props.link} target="_blank" rel='noreferrer' className="btn btn-primary">Read full article at <span style={{fontFamily:'revert',fontWeight:'bold',color:'black'}}> {props.source}</span></a>  
                 </div>
             </div>
         </div>

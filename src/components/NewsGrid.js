@@ -25,7 +25,6 @@ export class NewsGrid extends Component {
 
     constructor(props) {
         super(props);
-        console.log("Hello I am a constructor from News component");
         this.state = {
             articles: [],
             Loading: true,
@@ -34,7 +33,6 @@ export class NewsGrid extends Component {
         }
     }
     async getNews() {
-        console.log("articels fetch first")
         let api = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&pageSize=9&page=${this.state.page}&apiKey=782b51aa2b354b019dcd2c70ddf416f0`;
         this.setState({ Loading: true })
         let data = await fetch(api);
@@ -46,18 +44,13 @@ export class NewsGrid extends Component {
             totalResults: parsedData.totalResults,
             Loading: false,
         })
-        console.log(this.state.page);
     }
     async componentDidMount() {
-        console.log("articels fetch started");
         this.getNews();
     }
 
     fetchMoreData = async () => {
-        console.log("fetched more articles")
-        console.log(this.state.page);
         this.setState({ page: this.state.page + 1 })
-        console.log(this.state.page);
         let api = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&pageSize=9&page=${this.state.page}&apiKey=782b51aa2b354b019dcd2c70ddf416f0`;
         let data = await fetch(api);
 
@@ -74,7 +67,6 @@ export class NewsGrid extends Component {
 
     }
     LoadMoreNews = async () => {
-        console.log("fetched more news");
         let api = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&pageSize=9&page=${this.state.page + 1}&apiKey=782b51aa2b354b019dcd2c70ddf416f0`;
         let data = await fetch(api);
         this.setState({ loading: true });
