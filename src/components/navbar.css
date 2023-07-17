@@ -1,76 +1,121 @@
-.card {
-  width: 22rem;
-  transition: 0.2s;
-}
-
-.card:hover {
-  margin: 3px;
-}
-
-.navbar {
-  background-color: rgb(200, 200, 200);
-  justify-content: space-between;
-  /* border: 2px solid red; */
-}
-
-
-@media (max-width: 1000px) {
+header {
   
-  #link-container>ul{
-    /* background-color: cyan; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    /* border: 2px solid red; */
-  }
-  #link-container>ul>li{
-    margin: 13px;
-  }
- 
-  #darkmodebtn{
-    position: absolute;
-    right: 0;
-    top: 20px;
-  }
-  
-.category {
- 
-  margin-left: 0px;
-}
-}
-
-.category {
-  list-style: none;
-  text-decoration: none;
-}
-.nav-item{
-  margin: 13px;
-}
-#link-container>ul{
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-}
-#link-container>ul>li{
-  text-decoration: none;
-  list-style: none;
+  justify-content: space-between;
+  background-color: gainsboro;
 }
 
 #logo {
-  color: rgb(0, 0, 195);
-  font-weight: bolder;
-  font-size: 2rem;
   text-decoration: none;
-  padding: 13px;
+  color: rgb(22, 0, 164);
+  font-size: 2rem;
+  padding: 0 17px;
+  font-weight: bold;
 }
-#darkmodebtn{
-  position: absolute;
-  right: 0;
-  margin: 13px;
+
+.nav-container {
+  width:80vw ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.nav-item {
-  font-weight: bolder;
-  font-size: 1.1rem;
+
+.nav-container>nav>ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 33px;
+}
+
+.nav-container>nav>ul>li {
+  list-style: none;
+}
+
+nav a {
+  color: black;
+  margin: 0 13px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+
+nav a:hover {
+  color: rgb(2, 2, 149);
+}
+
+header .nav-btn {
+  visibility: hidden;
+  background: #000;
+  
+}
+
+
+.github{
+  font-size: 2rem;
+  color: black;
+  margin: 0 23px;
+  transition:  0.3s ;
+}
+.github:hover{
+  transform: scale(1.2);
+}
+@media only screen and (max-width: 1024px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-container .nav-btn {
+    font-size: 1.5rem;
+    padding: 13px;
+    border: none;
+    visibility: visible;
+    opacity: 1;
+    background:  gainsboro;
+  }
+
+  header nav {
+    z-index: 1000;
+    position: fixed;
+    top: -200vh;
+    left: 0;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: rgb(0, 0, 99);
+    transition: 0.5s;
+  }
+  header nav ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  header .responsive_nav {
+    transform: translateY(200vh);
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.52rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+    color: white;
+    margin: 3px;
+  }
+
 }

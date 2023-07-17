@@ -1,4 +1,10 @@
 
-.darkmode{
+.dark-mode{
+  color: white;
   background-color: black;
+}
+
+.light-mode{
+  background-color: white;
+  color: black;
 }
