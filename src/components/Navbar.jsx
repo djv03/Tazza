@@ -7,8 +7,9 @@ import './navbar.css'
 import { FaTimes } from 'react-icons/fa'
 import { AiOutlineMenu, AiFillGithub } from 'react-icons/ai'
 
+import { SiZincsearch } from "react-icons/si";
 
- function Navbar({ darkMode, setDarkMode }) {
+function Navbar({ darkMode, setDarkMode }) {
     const navRef = useRef();
 
     const showNavbar = () => {
@@ -18,8 +19,8 @@ import { AiOutlineMenu, AiFillGithub } from 'react-icons/ai'
     return (
         <header >
             <div className="nav-container ">
-                <Link id='logo' to="/" >Tazza</Link>
-                <nav ref={navRef}>
+                <Link id='logo' to="/" >Tazza<SiZincsearch /></Link>
+                <nav ref={navRef} className='link-container'>
                     <ul>
                         <li className="nav-item"><Link className="category" to="/">General</Link></li>
                         <li className="nav-item"><Link className="category" to="/business">Business</Link></li>
@@ -27,7 +28,13 @@ import { AiOutlineMenu, AiFillGithub } from 'react-icons/ai'
                         <li className="nav-item"><Link className="category" to="/health">Health</Link></li>
                         <li className="nav-item"><Link className="category" to="/science">Science</Link></li>
                         <li className="nav-item"><Link className="category" to="/sports">Sports</Link></li>
+                        <li className="nav-item"><Link className="category" to="/technology">Technology</Link></li>
                     </ul>
+                    <div className="btn-container">
+                        <a href='https://github.com/djv03/Tazza' className="github">
+                            <AiFillGithub />
+                        </a>
+                    </div>
                     <button
                         className="nav-btn nav-close-btn"
                         onClick={showNavbar}>
@@ -35,16 +42,12 @@ import { AiOutlineMenu, AiFillGithub } from 'react-icons/ai'
                     </button>
                 </nav>
                 <button
-                    className="nav-btn"
+                    className="nav-btn nav-open-btn"
                     onClick={showNavbar}>
                     <AiOutlineMenu />
                 </button>
             </div>
-            <div className="btn-container">
-                <a href='https://github.com/djv03/Tazza' className="github">
-                    <AiFillGithub />
-                </a>
-            </div>
+
         </header>
     )
 }

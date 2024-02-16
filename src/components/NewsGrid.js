@@ -8,9 +8,6 @@ import Notfound from './Notfound';
 
 import '../App.css'
 
-// import InfiniteScroll from "react-infinite-scroll-component";
-
-
 export class NewsGrid extends Component {
 
     static defaultProps = {
@@ -29,7 +26,7 @@ export class NewsGrid extends Component {
             articles: [],
             Loading: true,
             page: 1,
-            totalResults: 0 
+            totalResults: 0
         }
     }
     async getNews() {
@@ -48,23 +45,8 @@ export class NewsGrid extends Component {
     async componentDidMount() {
         this.getNews();
     }
-
-    fetchMoreData = async () => {
-        this.setState({ page: this.state.page + 1 })
-        let api = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&pageSize=9&page=${this.state.page}&apiKey=782b51aa2b354b019dcd2c70ddf416f0`;
-        let data = await fetch(api);
-
-        let parsedData = await data.json();
-
-        this.setState({
-            articles: this.state.articles.concat(parsedData.articles),
-            totalResults: parsedData.totalResults,
-        })
-
-    }
     capitalize = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
-
     }
     LoadMoreNews = async () => {
         let api = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&pageSize=9&page=${this.state.page + 1}&apiKey=782b51aa2b354b019dcd2c70ddf416f0`;
@@ -81,45 +63,37 @@ export class NewsGrid extends Component {
 
 
     }
-
-
-
     render() {
         return (
             <>
                 <div className="container">
                     <div className="row " >
-                        <h1 className="text-center" style={{ margin:'35px 0px',color:"#0d6efd" }}>Tazza - Top {this.capitalize(this.props.category)} Headlines</h1>
+                        <h1 className="text-center" style={{ margin: '35px 0px', color: "#0d6efd" }}>Tazza - Top {this.capitalize(this.props.category)} Headlines</h1>
                         {this.state.Loading && <Loading />}
-                        {/* <InfiniteScroll
-                            dataLength={this.state.articles.length}
-                            next={this.fetchMoreData}//----> need to define this function
-                            hasMore={this.state.articles.length !== this.state.totalResults}
-                            loader={<Loading/>}
-                        > */}
-                        <div className='row'>
-                            {!this.state.articles? <Notfound/>:  this.state.articles.map((element) => {
-                                return <div className="col-md-4 mt-4" key={element.url}>
 
-                                    <NewsCard title={element.title ? element.title : ""}
-                                        desc={element.description ? element.description : ""}
-                                        image_url={element.urlToImage}
-                                        link={element.url}
-                                        author={element.author}
-                                        date={element.publishedAt}
-                                        source={element.source.name} />
-                                </div>
-                            })}
+                        <div className='row'>
+                            {!this.state.articles
+                                ?
+                                <Notfound />
+                                :
+                                this.state.articles.map((element) => {
+                                    return <div className="col-md-4 mt-4" key={element.url}>
+
+                                        <NewsCard title={element.title ? element.title : ""}
+                                            desc={element.description ? element.description : ""}
+                                            image_url={element.urlToImage}
+                                            link={element.url}
+                                            author={element.author}
+                                            date={element.publishedAt}
+                                            source={element.source.name} />
+                                    </div>
+                                })}
                             <div className='container'>
-                            {this.state.articles &&
-                                <button type="button" className="btn btn-primary w-100 mx-auto mt-3 mb-3" onClick={this.LoadMoreNews}>Load More</button>
-                            }
+                                {(this.state.articles || !this.state.Loading) &&
+                                    <button type="button" className="btn btn-primary w-100 mx-auto mt-3 mb-3" onClick={this.LoadMoreNews}>Load More</button>
+                                }
                             </div>
                         </div>
-
-
-                        {/* </InfiniteScroll> */}
-
                     </div>
                 </div>
             </>

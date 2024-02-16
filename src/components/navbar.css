@@ -1,32 +1,36 @@
-header {
-  
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: gainsboro;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 #logo {
   text-decoration: none;
   color: rgb(22, 0, 164);
   font-size: 2rem;
-  padding: 0 17px;
   font-weight: bold;
+  margin: 17px 23px;
+  display: flex;
+  color: black;
+}
+#logo>svg{
+  color: skyblue;
+  margin: 9px 3px; 
 }
 
 .nav-container {
-  width:80vw ;
+  /* width: 100% ; */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: gainsboro;
 }
-
+.link-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
 .nav-container>nav>ul {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 33px;
+  margin-top: 13px;
 }
 
 .nav-container>nav>ul>li {
@@ -35,7 +39,8 @@ header {
 
 nav a {
   color: black;
-  margin: 0 13px;
+  margin: 13px 13px;
+  font-family: "Fredoka", sans-serif;
   text-decoration: none;
   font-size: 1.5rem;
   transition: 0.5s;
@@ -55,8 +60,8 @@ header .nav-btn {
 .github{
   font-size: 2rem;
   color: black;
-  margin: 0 23px;
   transition:  0.3s ;
+  margin-right:0px;
 }
 .github:hover{
   transform: scale(1.2);
@@ -116,6 +121,12 @@ header .nav-btn {
     font-size: 1.5rem;
     color: white;
     margin: 3px;
+  }
+  .github{
+    font-size: 2rem;
+    color: white;
+    transition:  0.3s ;
+    margin-right:0px;
   }
 
 }
